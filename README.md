@@ -72,5 +72,5 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 
 ## Contact
 
-If you have any questions or suggestions, feel free to contact me at [zaw.linnhtet03@gmail.com].
+If you have any questions or suggestions, feel free to contact me at zaw.linnhtet03@gmail.com.
 
