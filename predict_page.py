@@ -3,9 +3,19 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import bz2
+
+# def load_model():
+#     with open('notebooks/football_model2.pkl.bz2', 'rb') as file:
+#         data = pickle.load(file)
+#     return data
+
+# data = load_model()
+
 
 def load_model():
-    with open('football_model2.pkl', 'rb') as file:
+    # Open the bz2 file using bz2.BZ2File for reading
+    with bz2.BZ2File('notebooks/football_model.pkl.bz2', 'rb') as file:
         data = pickle.load(file)
     return data
 
@@ -51,12 +61,22 @@ def show_predict_page():
 
     ok = st.button("Predict Market Value")
     if ok:
-        X = np.array([[nationality, position, age, pace, shooting, passing, dribbling, defending, physic, goalkeeping, overall]])
+        # Create a DataFrame with the correct feature names
+        X = pd.DataFrame(
+            [[nationality, position, age, pace, shooting, passing, dribbling, defending, physic, goalkeeping, overall]],
+            columns=[
+                'Nationality', 'Primary_Position', 'Age', 'Pace', 'Shooting',
+                'Passing', 'Dribbling', 'Defending', 'Physic', 'Goalkeeping', 'Overall'
+            ]
+        )
         
-        # Apply the label encoders to the categorical values
-        X[:, 0] = le_nationality.transform(X[:, 0])  # Transform nationality
-        X[:, 1] = le_position.transform(X[:, 1])  # Transform primary position
+        # Apply the label encoders to the categorical columns
+        X['Nationality'] = le_nationality.transform(X['Nationality'])  # Transform nationality
+        X['Primary_Position'] = le_position.transform(X['Primary_Position'])  # Transform position
+        
+        # Ensure all values are float
         X = X.astype(float)
-
+        
+        # Predict the market value
         market_value = regressor.predict(X)
         st.subheader(f"The predicted market value is €{market_value[0]:,.2f}")
