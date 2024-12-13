@@ -22,7 +22,7 @@ This project is a web-based application that predicts a football player's market
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/zawlinnhtet03/player-market-value-predictor.git
+   git clone https://github.com/zawlinnhtet03/football-value-predict.git
    cd football-performance-predictor
    ```
 
@@ -65,12 +65,12 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 
 ---
 
-## Acknowledgments
+## Acknowledgment
 - Kaggle for providing the football dataset.
 
 ---
 
 ## Contact
 
-If you have any questions or suggestions, feel free to contact me at zaw.linnhtet03@gmail.com.
+If you have any questions or suggestions, feel free to contact me at zaw.linn.htet03@gmail.com.
 

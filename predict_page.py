@@ -26,7 +26,7 @@ le_nationality = data["le_nationality"]
 le_position = data["le_position"]
 
 def show_predict_page():
-    st.title("Football Player Market Value Prediction")
+    st.title("Football Player Market Value Prediction ⚽")
 
     st.write("""### We need some information to predict the market value""")
 
