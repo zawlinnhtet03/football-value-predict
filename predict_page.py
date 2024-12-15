@@ -5,17 +5,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import bz2
 
-# def load_model():
-#     with open('notebooks/football_model2.pkl.bz2', 'rb') as file:
-#         data = pickle.load(file)
-#     return data
-
-# data = load_model()
-
-
 def load_model():
     # Open the bz2 file using bz2.BZ2File for reading
-    with bz2.BZ2File('notebooks/football_model.pkl.bz2', 'rb') as file:
+    with bz2.BZ2File('notebooks/football_model.pkl2.bz2', 'rb') as file:
         data = pickle.load(file)
     return data
 
